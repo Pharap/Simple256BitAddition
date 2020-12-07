@@ -1,2 +1,3 @@
-# SImple256BitAddition
-Simple 256 bit addition demo
+# Simple256BitAddition
+
+Completely untested, comes with no warranty, don't sue me if things explode.
