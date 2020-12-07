@@ -2,7 +2,8 @@
 
 // Released under CC0
 
-inline uint8_t addBytes(uint8_t * destination, const uint8_t * leftSource, const uint8_t * rightSource, size_t size, uint8_t carryBit = 0)
+template<size_t size>
+inline uint8_t addBytes(uint8_t (&destination)[size], const uint8_t (&leftSource)[size], const uint8_t (&rightSource)[size], uint8_t carryBit = 0)
 {
 	for(size_t index = 0; index < size; ++index)
 	{
@@ -21,12 +22,7 @@ inline uint8_t addBytes(uint8_t * destination, const uint8_t * leftSource, const
 }
 
 template<size_t size>
-inline uint8_t addBytes(uint8_t (&destination)[size], const uint8_t (&leftSource)[size], const uint8_t (&rightSource)[size], uint8_t carryBit = 0)
-{
-	return addBytes(&destination, &leftSource, &rightSource, size, carryBit);
-}
-
-inline uint8_t addBytesInPlace(uint8_t * destination, const uint8_t * source, size_t size, uint8_t carryBit = 0)
+inline uint8_t addBytesInPlace(uint8_t (&destination)[size], const uint8_t (&source)[size], uint8_t carryBit = 0)
 {
 	for(size_t index = 0; index < size; ++index)
 	{
@@ -42,12 +38,6 @@ inline uint8_t addBytesInPlace(uint8_t * destination, const uint8_t * source, si
 	
 	// Return the carry bit
 	return carryBit;
-}
-
-template<size_t size>
-inline uint8_t addBytesInPlace(uint8_t (&destination)[size], const uint8_t (&source)[size], uint8_t carryBit = 0)
-{
-	return addBytesInPlace(&destination, &source, size, carryBit);
 }
 
 struct Int256
