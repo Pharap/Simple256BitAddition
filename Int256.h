@@ -64,7 +64,7 @@ inline Int256 operator +(const Int256 & left, const Int256 & right)
 
 inline Int256 & operator +=(Int256 & left, const Int256 & right)
 {
-	addBytesInPlace(result.bytes, left.bytes, right.bytes);
+	addBytesInPlace(left.bytes, right.bytes);
 	
 	return left;
 }
